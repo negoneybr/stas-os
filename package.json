@@ -1,0 +1,14 @@
+{
+  "name": "sats-os-desktop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "SATS OS desktop environment running on Linux without replacing ChromeOS",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "start:desktop": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^38.2.0"
+  }
+}
