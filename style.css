@@ -131,3 +131,18 @@ body{background:#050505;color:#f7f7f7}
 .browser-frame-note{position:absolute;z-index:1;top:7px;left:7px;right:7px;padding:6px 9px;border-radius:8px;background:#111111d9;color:#fff;font-size:10px;backdrop-filter:blur(12px);pointer-events:none}
 .browser-disclaimer{font-size:10px;margin:0}
 @media(max-width:600px){.browser-form{gap:5px}.browser-nav{width:32px}.browser-newtab{padding:9px}.browser-shortcuts{gap:5px}.browser-frame-wrap{min-height:160px}#browserFrame{min-height:180px}}
+
+/* SATS Studio: ambiente criativo */
+.studio{background:linear-gradient(145deg,#fff,#777)!important;color:#090909!important}
+.studio-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.studio-top h2{margin-top:9px!important}.studio-actions{display:flex;gap:7px;flex-wrap:wrap}
+.studio-templates{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:12px}
+.studio-templates .file-tile{padding:12px 6px;font-size:11px}
+.studio-workspace{display:grid;grid-template-columns:1fr 1fr;gap:10px;min-height:300px}
+.studio-editor,.studio-preview{min-width:0;display:flex;flex-direction:column;border:1px solid #ffffff28;border-radius:13px;overflow:hidden;background:#05050550}
+.studio-panel-title{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px;background:#ffffff0b;border-bottom:1px solid #ffffff20;font-size:11px}
+#studioCode{width:100%;flex:1;min-height:260px;resize:vertical;background:#070707;color:#f1f1f1;border:0;outline:0;padding:13px;font:12px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;tab-size:2}
+#studioPreview{width:100%;height:100%;min-height:300px;border:0;background:white}
+.studio-help{font-size:11px;line-height:1.6;margin-top:12px}
+.browser-nav{border:1px solid #ffffff25;border-radius:8px;background:#ffffff12;padding:5px 9px;color:inherit}
+@media(max-width:700px){.studio-workspace{grid-template-columns:1fr}.studio-templates{grid-template-columns:repeat(2,minmax(0,1fr))}.studio-top{display:block}.studio-actions{margin-top:12px}#studioPreview{height:280px;min-height:280px}.studio-editor #studioCode{min-height:260px}}
