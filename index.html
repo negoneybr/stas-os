@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#09090f">
+  <title>SATS OS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="boot" class="boot"><div class="boot-logo">S<span>•</span></div><p>SATS OS</p><div class="boot-bar"><i></i></div></div>
+  <main id="desktop" class="desktop">
+    <header class="topbar"><div class="brand"><span class="brand-mark">S</span> SATS <b>OS</b></div><div class="top-center" id="dateTop">Sistema pronto</div><div class="top-right"><span class="status-dot"></span><span>Online</span><span id="topClock">--:--</span></div></header>
+    <section class="desktop-icons" aria-label="Aplicativos">
+      <button class="desktop-icon" data-open="files"><span class="app-icon folder">▰</span><span>Arquivos</span></button>
+      <button class="desktop-icon" data-open="notes"><span class="app-icon note">▤</span><span>Notas</span></button>
+      <button class="desktop-icon" data-open="calculator"><span class="app-icon calc">＋</span><span>Calculadora</span></button>
+      <button class="desktop-icon" data-open="terminal"><span class="app-icon term">›_</span><span>Terminal</span></button>
+      <button class="desktop-icon" data-open="settings"><span class="app-icon gear">⚙</span><span>Configurações</span></button>
+    </section>
+    <section id="windows" class="windows"></section>
+    <div id="startMenu" class="start-menu hidden"><div class="start-heading"><span class="brand-mark">S</span><div><strong>SATS OS</strong><small>Seu espaço digital</small></div></div><input id="appSearch" placeholder="Pesquisar aplicativos..." aria-label="Pesquisar aplicativos"><div class="start-apps">
+      <button data-open="files">📁　Arquivos</button><button data-open="notes">📝　Notas</button><button data-open="calculator">🧮　Calculadora</button><button data-open="terminal">⌨️　Terminal</button><button data-open="settings">⚙️　Configurações</button><button data-open="about">◈　Sobre o SATS OS</button>
+    </div><div class="start-bottom"><span>● Usuário local</span><button id="powerBtn">⏻</button></div></div>
+    <footer class="taskbar"><button id="startBtn" class="start-btn" aria-label="Abrir menu iniciar"><span class="brand-mark">S</span></button><div id="taskApps" class="task-apps"></div><div class="task-tray"><span title="Conexão">◉</span><span title="Som">◖</span><button id="trayClock"><span id="trayTime">--:--</span><small id="trayDate">--/--</small></button></div></footer>
+    <div id="toast" class="toast"></div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
