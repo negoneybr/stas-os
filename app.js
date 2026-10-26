@@ -52,3 +52,9 @@ document.addEventListener("click",e=>{if(!e.target.closest("#startMenu")&&!e.tar
 $("#powerBtn").onclick=()=>{if(confirm("Deseja sair da tela do SATS OS?"))toast("O SATS OS continua aberto nesta aba.")};
 function tick(){const d=new Date(),time=d.toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit"});$("#topClock").textContent=time;$("#trayTime").textContent=time;$("#trayDate").textContent=d.toLocaleDateString("pt-BR",{day:"2-digit",month:"2-digit"});$("#dateTop").textContent=d.toLocaleDateString("pt-BR",{weekday:"short",day:"numeric",month:"short"});}
 tick();setInterval(tick,1000);setTimeout(()=>$("#boot").classList.add("done"),1300);setTimeout(()=>$("#boot").remove(),1900);setTimeout(()=>openApp("about"),1450);
+// Instalação PWA e cache offline do SATS OS
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("/sw.js").then(() => {
+    console.info("SATS OS: suporte offline ativado.");
+  }).catch(error => console.warn("SATS OS: não foi possível ativar o modo offline.", error)));
+}
