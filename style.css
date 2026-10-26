@@ -5,3 +5,57 @@
 .social{background:linear-gradient(140deg,#a855f7,#7c3aed)}.browser{background:linear-gradient(140deg,#06b6d4,#2563eb)}.ai{background:linear-gradient(140deg,#c084fc,#7c3aed)}.games{background:linear-gradient(140deg,#ef4444,#7f1d1d)}.cloud{background:linear-gradient(140deg,#38bdf8,#4338ca)}.music{background:linear-gradient(140deg,#ec4899,#7c3aed)}
 .browser-form{display:flex;gap:8px;align-items:center;margin:12px 0}.browser-form .text-input{flex:1;min-width:0}.chat-log{padding:12px;border:1px solid var(--line);background:#08080f;border-radius:10px;min-height:90px;max-height:200px;overflow:auto;line-height:1.6}.chat-log p{margin:4px 0 12px}.file-grid button{color:inherit;font:inherit;cursor:pointer}
 @media(max-width:600px){.desktop-icons{grid-template-columns:65px 65px;grid-auto-flow:row;max-height:calc(100% - 130px);overflow:auto}.desktop-icon{max-width:65px}}
+
+/* SATS OS — visual inspirado no iOS: glass, ícones arredondados e dock */
+:root{--bg:#090b18;--panel:rgba(24,27,45,.78);--line:rgba(255,255,255,.16);--text:#fff;--muted:#c3c8dd;--accent:#8b9cff;--accent2:#ff6dba;--wallpaper:radial-gradient(ellipse at 18% 18%,rgba(255,119,190,.9),transparent 28%),radial-gradient(ellipse at 80% 22%,rgba(101,111,255,.95),transparent 32%),radial-gradient(ellipse at 50% 90%,rgba(42,187,255,.7),transparent 40%),linear-gradient(145deg,#161b45 0%,#352b73 45%,#111c43 100%)}
+body{background:#101329;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;letter-spacing:.005em}
+.desktop{background:var(--wallpaper);background-size:cover;isolation:isolate}
+.desktop:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(120deg,#fff0,#ffffff08 50%,#00000015);backdrop-filter:saturate(1.18)}
+.topbar{height:42px;padding:0 22px;background:rgba(20,24,54,.24);border:0;backdrop-filter:blur(28px) saturate(1.5);font-size:12px;font-weight:600}
+.brand{gap:7px;letter-spacing:.8px}.brand-mark{border-radius:9px;background:linear-gradient(145deg,#8b9cff,#bd76ff 55%,#ff82c8);box-shadow:0 4px 14px #8b9cff55}
+.brand b{color:#d7d4ff}.top-center{color:#fff9}.top-right{color:#fff;gap:14px}.status-dot{background:#6fffb0;box-shadow:0 0 10px #6fffb088}
+.desktop-icons{top:72px;left:22px;width:min(430px,calc(100vw - 40px));grid-template-columns:repeat(4,minmax(62px,78px));grid-auto-rows:90px;gap:12px 13px}
+.desktop-icon{gap:7px;padding:5px 2px;border-radius:16px;font-size:11px;font-weight:500;text-shadow:0 1px 5px #171334aa}
+.desktop-icon:hover,.desktop-icon:focus{background:#ffffff1b;border-color:#ffffff22;backdrop-filter:blur(12px)}
+.app-icon{width:54px;height:54px;border-radius:16px;font-size:25px;box-shadow:0 7px 17px #0a0c2460,inset 0 1px 1px #ffffff70;border:1px solid #ffffff22;position:relative;overflow:hidden}
+.app-icon:after{content:"";position:absolute;left:0;right:0;top:0;height:48%;background:linear-gradient(#ffffff25,#ffffff00);pointer-events:none}
+.folder{background:linear-gradient(145deg,#ffcf58,#ff8b24)}.note{background:linear-gradient(145deg,#c5b6ff,#7d5cff)}.calc{background:linear-gradient(145deg,#65e5ff,#2674ff)}.term{background:linear-gradient(145deg,#4b526b,#171a2c)}.gear{background:linear-gradient(145deg,#d8dbe7,#7d879f);color:#242a3d}.social{background:linear-gradient(145deg,#d1a5ff,#7445ff)}.browser{background:linear-gradient(145deg,#8deaff,#2785ff)}.ai{background:linear-gradient(145deg,#e0baff,#8558ff)}.games{background:linear-gradient(145deg,#ff9b87,#fa3f70)}.cloud{background:linear-gradient(145deg,#9ceaff,#477bff)}.music{background:linear-gradient(145deg,#ff9acb,#e23d8c)}
+.windows{inset:44px 0 82px}
+.window{border-radius:20px;background:rgba(24,27,43,.84);border:1px solid #ffffff38;box-shadow:0 28px 90px #05091d66,0 1px 0 #ffffff24 inset;backdrop-filter:blur(35px) saturate(1.45)}
+.window.active{border-color:#ffffff6b;box-shadow:0 28px 90px #05091d66,0 0 0 1px #ffffff12}
+.window-title{height:48px;padding:0 15px;background:#ffffff09;border-bottom:1px solid #ffffff18}
+.window-title strong{font-size:13px;font-weight:650}.window-title .mini-icon{border-radius:9px;background:#ffffff15}
+.window-controls{gap:7px}.window-controls button{width:12px;height:12px;border-radius:50%;font-size:0;padding:0;background:#ff6259;border:1px solid #00000016;position:relative}
+.window-controls button:nth-child(1){background:#ffbd2e}.window-controls button:nth-child(2){background:#28c840}.window-controls .close:hover{background:#ff6259}
+.window-controls button:nth-child(1):after,.window-controls button:nth-child(2):after,.window-controls .close:after{content:"";position:absolute;inset:0}
+.window-body{color:#f8f8ff}.welcome-card{border-radius:17px;background:linear-gradient(135deg,#ffffff13,#ffffff06);border:1px solid #ffffff20}
+.pill{border-radius:99px;background:#b3baff24;border-color:#c5caff4a;color:#e5e6ff}
+.text-input,.notes-area,.search-input,.calc-display{background:#11152b80;border:1px solid #ffffff25;border-radius:12px;color:#fff}
+.text-input:focus,.notes-area:focus,.search-input:focus{border-color:#a8b5ff;box-shadow:0 0 0 3px #9baaff22}
+.action-btn{background:linear-gradient(135deg,#9b8cff,#687dff);border-radius:12px;box-shadow:0 5px 15px #6476ff40}
+.file-tile{background:#ffffff0b;border:1px solid #ffffff18;border-radius:15px}
+.calc-keys button{border-radius:13px;background:#ffffff0d;border-color:#ffffff17}.calc-keys .operator{background:#8290ff30}
+.terminal-output{background:#090c1caa;border-radius:13px;color:#d2caff}
+.settings-row{border-color:#ffffff16}
+.start-menu{bottom:78px;left:50%;transform:translateX(-50%);width:min(390px,calc(100vw - 24px));padding:19px;border-radius:24px;background:rgba(27,30,53,.82);border:1px solid #ffffff30;box-shadow:0 25px 80px #06091d66;backdrop-filter:blur(40px) saturate(1.5)}
+.start-heading .brand-mark{width:34px;height:34px;border-radius:11px}.start-menu input{background:#ffffff13;border-color:#ffffff22;border-radius:12px}.start-apps{gap:7px}.start-apps button{padding:12px 10px;border-radius:12px;background:#ffffff07}.start-apps button:hover{background:#ffffff19}.start-bottom{border-color:#ffffff1c}
+.taskbar{left:50%;right:auto;bottom:12px;transform:translateX(-50%);width:max-content;max-width:calc(100vw - 24px);height:66px;padding:8px 10px;gap:9px;border:1px solid #ffffff40;border-radius:23px;background:rgba(237,240,255,.2);box-shadow:0 12px 35px #070a2550,inset 0 1px 0 #ffffff40;backdrop-filter:blur(35px) saturate(1.6)}
+.start-btn{width:48px;height:48px;flex-shrink:0;border-radius:15px;background:linear-gradient(145deg,#9c91ff,#ec91d1);box-shadow:0 4px 13px #090c3040}
+.start-btn .brand-mark{width:31px;height:31px;border-radius:10px}
+.task-apps{flex:0 1 auto;gap:6px;max-width:min(58vw,620px)}
+.task-app{position:relative;width:48px;height:48px;min-width:48px;justify-content:center;padding:0;border-radius:15px;background:#ffffff17;border:1px solid #ffffff15;font-size:20px;transition:transform .18s,background .18s}
+.task-app:hover{transform:translateY(-5px) scale(1.06);background:#ffffff2c}.task-app.selected{background:#ffffff27;border-color:#ffffff25}.task-app .task-label{display:none}.task-app.selected:after{bottom:-5px;background:#fff;width:4px;height:4px;border-radius:50%}
+.task-tray{gap:0;padding-left:8px;border-left:1px solid #ffffff30;color:white}.task-tray>span{display:none}.task-tray button{min-width:49px;padding:4px 7px;color:white}
+.toast{bottom:92px;right:18px;border-radius:15px;background:rgba(29,32,56,.9);border-color:#ffffff2c;backdrop-filter:blur(25px)}
+.boot{background:radial-gradient(ellipse at 50% 40%,#4b478d,#10132e 65%,#080b1c)}.boot-logo span{color:#ff9ed5}.boot-bar{border-radius:99px}.boot-bar i{background:linear-gradient(90deg,#8b9cff,#ff9ed5)}
+@media(max-width:600px){
+ .topbar{height:38px;padding:0 13px}.brand{font-size:11px}.top-right{gap:8px}
+ .desktop-icons{top:60px;left:12px;width:calc(100vw - 24px);grid-template-columns:repeat(4,minmax(55px,1fr));grid-auto-rows:83px;gap:9px 5px}
+ .app-icon{width:49px;height:49px;border-radius:15px}.desktop-icon{font-size:10px}
+ .windows{inset:39px 0 88px}.window{width:calc(100vw - 18px);height:min(490px,calc(100% - 10px));border-radius:19px}
+ .taskbar{bottom:9px;height:61px;padding:6px 7px;gap:6px;border-radius:20px}
+ .start-btn,.task-app{width:43px;height:43px;min-width:43px;border-radius:14px}.task-app{font-size:18px}
+ .task-apps{max-width:calc(100vw - 155px);gap:4px}.task-tray{padding-left:4px}.task-tray button{min-width:40px}
+ .start-menu{bottom:78px}
+}
+@media(max-width:370px){.task-apps{max-width:calc(100vw - 140px)}.task-app{width:37px;height:40px;min-width:37px}.start-btn{width:40px;min-width:40px}.task-tray button{min-width:34px}}
