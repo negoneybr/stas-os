@@ -155,3 +155,10 @@ body{background:#050505;color:#f7f7f7}
 
 /* Identidade visual dos apps SATS */
 .logo-social{background:linear-gradient(145deg,#ffb86b,#ff5b73 48%,#8d4dff);font-weight:900;font-size:27px;text-shadow:0 2px 8px #5b1b8a88}.logo-ai{background:linear-gradient(145deg,#d9c2ff,#8958ff 55%,#4c32b8);font-size:32px;font-weight:800}.logo-games{background:linear-gradient(145deg,#ffcf58,#ff6b35 50%,#e52e70);font-size:26px;text-shadow:0 2px 8px #802044}.logo-cloud{background:linear-gradient(145deg,#9ff3ff,#4196ff 55%,#564bff);font-size:29px}.logo-music{background:linear-gradient(145deg,#ff9ce2,#e23d9a 55%,#743dff);font-size:28px}.store{background:linear-gradient(145deg,#7af5c6,#1caa91 55%,#126a86)}.logo-store{font-size:26px;font-weight:800}
+
+.app-icon.logo-social{background:linear-gradient(145deg,#ffb15e,#ff526f 52%,#9b4dff);color:white;border:1px solid #ffffff66;box-shadow:inset 0 1px 2px #ffffffaa,0 5px 12px #0004;font-size:25px;font-weight:900}
+.app-icon.logo-ai{background:linear-gradient(145deg,#d8c9ff,#9a6bff 55%,#6240d9);color:white;border:1px solid #ffffff70;box-shadow:inset 0 1px 2px #fff9,0 5px 12px #0004}
+.app-icon.logo-games{background:linear-gradient(145deg,#ffe17a,#ff8b44 54%,#ef4e75);color:white;border:1px solid #ffffff70;box-shadow:inset 0 1px 2px #fff9,0 5px 12px #0004}
+.app-icon.logo-cloud{background:linear-gradient(145deg,#b9f4ff,#61b7ff 55%,#5e70f5);color:white;border:1px solid #ffffff70;box-shadow:inset 0 1px 2px #fff9,0 5px 12px #0004}
+.app-icon.logo-music{background:linear-gradient(145deg,#ffb7e7,#ed70c6 54%,#9b5bf5);color:white;border:1px solid #ffffff70;box-shadow:inset 0 1px 2px #fff9,0 5px 12px #0004}
+.app-icon.logo-store{background:linear-gradient(145deg,#a7f5ce,#4ec8a7 54%,#278db2);color:white;border:1px solid #ffffff70;box-shadow:inset 0 1px 2px #fff9,0 5px 12px #0004}
