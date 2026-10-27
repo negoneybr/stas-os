@@ -1,8 +1,11 @@
 // Bridge seguro para futuras funções nativas do SATS OS.
 // Não exponha APIs Node diretamente à interface.
-const { contextBridge } = require("electron");
+const { contextBridge, ipcRenderer } = require("electron");
 
 contextBridge.exposeInMainWorld("satsDesktop", {
   isDesktop: true,
-  platform: process.platform
+  platform: process.platform,
+  pickFiles: () => ipcRenderer.invoke("sats:pick-files"),
+  openHomeFolder: () => ipcRenderer.invoke("sats:open-home-folder"),
+  saveTextFile: (suggestedName, content) => ipcRenderer.invoke("sats:save-text", { suggestedName, content })
 });
