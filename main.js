@@ -2,6 +2,8 @@ const { app, BrowserWindow, shell, ipcMain, dialog } = require("electron");
 const fs = require("node:fs/promises");
 const os = require("node:os");
 const path = require("node:path");
+const { spawn } = require("node:child_process");
+let browserProcess = null;
 
 ipcMain.handle("sats:pick-files", async () => {
   const result = await dialog.showOpenDialog({ properties: ["openFile", "multiSelections"] });
@@ -25,6 +27,21 @@ ipcMain.handle("sats:save-text", async (_event, { suggestedName, content }) => {
   if (result.canceled || !result.filePath) return { canceled: true };
   await fs.writeFile(result.filePath, content, "utf8");
   return { canceled: false, path: result.filePath };
+});
+
+ipcMain.handle("sats:launch-browser", async () => {
+  // Launch the separate SATS Browser project if it has been cloned beside stas-os.
+  const browserDir = path.resolve(__dirname, "..", "sats-browser");
+  const browserPackage = path.join(browserDir, "package.json");
+  try {
+    await fs.access(browserPackage);
+    if (browserProcess && !browserProcess.killed) return { ok: true, message: "SATS Browser já está aberto." };
+    browserProcess = spawn("npm", ["start"], { cwd: browserDir, detached: true, stdio: "ignore" });
+    browserProcess.unref();
+    return { ok: true, message: "SATS Browser iniciado." };
+  } catch {
+    return { ok: false, message: "Não encontrei ~/sats-browser. Clone o projeto SATS Browser ao lado da pasta stas-os para integrar os dois aplicativos." };
+  }
 });
 
 function createWindow() {
