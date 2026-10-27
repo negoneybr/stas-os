@@ -195,3 +195,14 @@ body{background:#050505;color:#f7f7f7}
 .store-card button.remove{margin-left:6px;background:#ffffff16;color:#eee}
 .store-empty{padding:20px;border:1px dashed #ffffff2a;border-radius:16px;color:#c5c5d4}
 @media(max-width:600px){.store-hero{padding:16px}.store-hero h2{font-size:22px}.store-hero-mark{width:58px;height:58px;border-radius:17px;font-size:29px}.store-grid{grid-template-columns:1fr}}
+
+
+/* SATS Starfall — primeiro jogo original */
+.starfall{max-width:760px;margin:0 auto}.starfall-hud{display:flex;justify-content:space-around;gap:8px;padding:12px;border:1px solid #ffffff20;border-radius:14px;background:#ffffff0a}.starfall-hud span{color:#c9c9d8;font-size:12px}.starfall-hud b{color:#fff;font-size:16px;margin-left:5px}
+.sf-arena{height:310px;position:relative;overflow:hidden;margin-top:10px;border:1px solid #747bff55;border-radius:18px;background:radial-gradient(ellipse at 50% 110%,#29215b,#080b1d 65%);outline:none}
+.sf-arena:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#ffffffb0 1px,transparent 1px),radial-gradient(#ffffff66 1px,transparent 1px);background-size:43px 43px,71px 71px;background-position:0 0,19px 23px;opacity:.55}
+.sf-ship{position:absolute;z-index:2;bottom:7%;left:50%;transform:translateX(-50%);font-size:31px;filter:drop-shadow(0 0 10px #7abaff)}
+.sf-objects{position:absolute;inset:0;z-index:2}.sf-object{position:absolute;top:-10%;font-size:23px;transform:translateX(-50%);filter:drop-shadow(0 0 7px #fff5)}
+.sf-overlay{position:absolute;z-index:4;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;background:#080b1dcc;backdrop-filter:blur(5px)}.sf-overlay.hidden{display:none}.sf-overlay h3{font-size:29px;letter-spacing:5px;margin:0 0 8px}.sf-overlay p{color:#ddd;max-width:340px}.sf-controls{display:flex;justify-content:center;gap:10px;margin-top:10px}.sf-controls button{min-width:64px}
+.sats-browser .browser-form{margin-top:0}.browser-shortcuts{display:flex;gap:8px;margin-bottom:8px}.browser-shortcuts .file-tile{padding:8px 12px;font-size:11px}
+@media(max-width:600px){.sf-arena{height:260px}.starfall-hud{padding:9px}.starfall-hud b{font-size:14px}.sf-overlay h3{font-size:24px}}
