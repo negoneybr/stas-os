@@ -162,3 +162,36 @@ body{background:#050505;color:#f7f7f7}
 .app-icon.logo-cloud{background:linear-gradient(145deg,#b9f4ff,#61b7ff 55%,#5e70f5);color:white;border:1px solid #ffffff70;box-shadow:inset 0 1px 2px #fff9,0 5px 12px #0004}
 .app-icon.logo-music{background:linear-gradient(145deg,#ffb7e7,#ed70c6 54%,#9b5bf5);color:white;border:1px solid #ffffff70;box-shadow:inset 0 1px 2px #fff9,0 5px 12px #0004}
 .app-icon.logo-store{background:linear-gradient(145deg,#a7f5ce,#4ec8a7 54%,#278db2);color:white;border:1px solid #ffffff70;box-shadow:inset 0 1px 2px #fff9,0 5px 12px #0004}
+
+
+/* Ícones SATS redesenhados: cores próprias e acabamento de ícone móvel */
+.app-icon{display:inline-grid;place-items:center;flex-shrink:0;border:1px solid #ffffff45!important;border-radius:17px!important;overflow:hidden;box-shadow:0 8px 18px #0006,inset 0 1px 1px #ffffff65!important;color:#fff!important;font-weight:750;text-shadow:0 1px 3px #0003}
+.app-icon:after{content:"";position:absolute;inset:0 0 48%;background:linear-gradient(#ffffff32,transparent);pointer-events:none}
+.app-icon.folder{background:linear-gradient(145deg,#ffd76a,#ff982c)!important}
+.app-icon.note{background:linear-gradient(145deg,#fff8b7,#f6c94e)!important;color:#443b22!important}
+.app-icon.calc{background:linear-gradient(145deg,#8be7ff,#2c76ff)!important}
+.app-icon.term{background:linear-gradient(145deg,#586579,#171d2b)!important}
+.app-icon.gear{background:linear-gradient(145deg,#e8edf7,#7c879c)!important;color:#263047!important}
+.app-icon.social{background:linear-gradient(145deg,#ff9bd5,#9a43ff)!important}
+.app-icon.browser{background:radial-gradient(circle at 30% 25%,#b7fff3,#35a4ff 50%,#3845c9)!important}
+.app-icon.studio{background:linear-gradient(145deg,#74f0ca,#087e8b)!important}
+.app-icon.ai{background:linear-gradient(145deg,#f4c2ff,#a04bff 58%,#5530c7)!important}
+.app-icon.games{background:linear-gradient(145deg,#ffb36c,#fa426f 58%,#9a2cff)!important}
+.app-icon.cloud{background:linear-gradient(145deg,#a8f1ff,#3e8aff 60%,#5351cf)!important}
+.app-icon.music{background:linear-gradient(145deg,#ff9dce,#e13f9b 58%,#7836db)!important}
+.app-icon.store{background:linear-gradient(145deg,#b8f7cf,#21a875 60%,#087b77)!important}
+.desktop-icon .app-icon img{width:72%;height:72%;object-fit:contain;position:relative;z-index:1}
+.logo-social,.logo-ai,.logo-games,.logo-cloud,.logo-music,.logo-store{font-size:26px;line-height:1}
+.store-hero{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px;border-radius:22px;background:radial-gradient(circle at 90% 0,#7777ff55,transparent 45%),linear-gradient(135deg,#24243a,#111118);border:1px solid #ffffff1d;margin-bottom:18px}
+.store-hero h2{font-size:27px;margin:9px 0}.store-hero p{margin:0;max-width:430px;color:#c5c5d4}
+.store-hero-mark{width:76px;height:76px;flex-shrink:0;border-radius:22px;display:grid;place-items:center;font-size:38px;background:linear-gradient(145deg,#b8f7cf,#21a875 60%,#087b77);box-shadow:0 10px 30px #0006,inset 0 1px 1px #ffffff8a}
+.store-section-title{margin:22px 0 12px;font-size:17px;font-weight:750}
+.store-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.store-card{min-width:0;display:flex;gap:12px;padding:14px;border-radius:18px;background:#ffffff08;border:1px solid #ffffff18;align-items:flex-start;transition:transform .16s,background .16s}
+.store-card:hover{transform:translateY(-2px);background:#ffffff10}
+.store-card-icon{width:58px;height:58px;border-radius:17px;display:grid;place-items:center;flex-shrink:0;font-size:27px;border:1px solid #ffffff3a;box-shadow:inset 0 1px 1px #ffffff55}
+.store-card-main{flex:1;min-width:0}.store-card-main strong{display:block;font-size:14px;margin:3px 0 5px}.store-card-main small{display:block;color:#b8b8c8;line-height:1.45;min-height:34px}
+.store-card button{margin-top:10px;padding:8px 13px;border:0;border-radius:999px;background:#f5f5f7;color:#16161b;font-weight:750;font-size:12px}
+.store-card button.remove{margin-left:6px;background:#ffffff16;color:#eee}
+.store-empty{padding:20px;border:1px dashed #ffffff2a;border-radius:16px;color:#c5c5d4}
+@media(max-width:600px){.store-hero{padding:16px}.store-hero h2{font-size:22px}.store-hero-mark{width:58px;height:58px;border-radius:17px;font-size:29px}.store-grid{grid-template-columns:1fr}}
