@@ -25,7 +25,7 @@ default:return "<p>Aplicativo não encontrado.</p>";
 }}
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function openApp(id){if(!appInfo[id])return;$("#startMenu").classList.add("hidden");if(openWindows.has(id)){const old=openWindows.get(id);old.style.display="flex";focusWindow(old);return}
-const win=document.createElement("section");win.className="window active";win.dataset.app=id;win.style.zIndex=++z;win.style.left=`calc(50% + ${(winCount%5-2)*22}px)`;win.style.top=`calc(48% + ${(winCount%5-2)*12}px)`;winCount++;
+const win=document.createElement("section");win.className="window active maximized";win.dataset.app=id;win.style.zIndex=++z;win.style.left=`calc(50% + ${(winCount%5-2)*22}px)`;win.style.top=`calc(48% + ${(winCount%5-2)*12}px)`;winCount++;
 win.innerHTML=`<div class="window-title"><span class="mini-icon">${appInfo[id].icon}</span><strong>${appInfo[id].title}</strong><div class="window-controls"><button data-minimize title="Minimizar">—</button><button data-maximize title="Maximizar">□</button><button class="close" data-close title="Fechar">×</button></div></div><div class="window-body">${appContent(id)}</div>`;
 $("#windows").append(win);openWindows.set(id,win);focusWindow(win);makeDraggable(win);renderTasks();wireApp(id,win)}
 function focusWindow(win){$$(".window").forEach(w=>w.classList.remove("active"));win.classList.add("active");win.style.zIndex=++z;renderTasks()}
