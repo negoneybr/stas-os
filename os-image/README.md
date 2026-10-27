@@ -26,7 +26,7 @@ Em um sistema Debian/Ubuntu dedicado ou máquina virtual Linux com internet:
 sudo apt update
 sudo apt install -y live-build debootstrap git ca-certificates
 cd os-image
-lb config
+sh auto/config
 sudo lb build
 ```
 
