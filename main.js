@@ -1,5 +1,31 @@
-const { app, BrowserWindow, shell } = require("electron");
+const { app, BrowserWindow, shell, ipcMain, dialog } = require("electron");
+const fs = require("node:fs/promises");
+const os = require("node:os");
 const path = require("node:path");
+
+ipcMain.handle("sats:pick-files", async () => {
+  const result = await dialog.showOpenDialog({ properties: ["openFile", "multiSelections"] });
+  if (result.canceled) return [];
+  return Promise.all(result.filePaths.map(async filePath => {
+    const stat = await fs.stat(filePath);
+    return { name: path.basename(filePath), path: filePath, size: stat.size, isDirectory: stat.isDirectory() };
+  }));
+});
+
+ipcMain.handle("sats:open-home-folder", async () => {
+  const error = await shell.openPath(os.homedir());
+  return error || "OK";
+});
+
+ipcMain.handle("sats:save-text", async (_event, { suggestedName, content }) => {
+  if (typeof content !== "string" || content.length > 2_000_000) {
+    throw new Error("Conteúdo inválido ou maior que 2 MB.");
+  }
+  const result = await dialog.showSaveDialog({ defaultPath: path.basename(suggestedName || "arquivo.txt") });
+  if (result.canceled || !result.filePath) return { canceled: true };
+  await fs.writeFile(result.filePath, content, "utf8");
+  return { canceled: false, path: result.filePath };
+});
 
 function createWindow() {
   const win = new BrowserWindow({
