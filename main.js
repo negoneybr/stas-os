@@ -19,6 +19,15 @@ ipcMain.handle("sats:open-home-folder", async () => {
   return error || "OK";
 });
 
+ipcMain.handle("sats:import-text", async () => {
+  const result = await dialog.showOpenDialog({ properties: ["openFile"], filters: [{ name: "Arquivos compatíveis", extensions: ["html","htm","svg","txt","css","js","json"] }, { name: "Todos os arquivos", extensions: ["*"] }] });
+  if (result.canceled || !result.filePaths[0]) return { canceled: true };
+  const filePath = result.filePaths[0], name = path.basename(filePath), ext = path.extname(name).toLowerCase();
+  if (![".html",".htm",".svg",".txt",".css",".js",".json"].includes(ext)) return { canceled: false, supported: false, name };
+  const stat = await fs.stat(filePath);
+  if (stat.size > 2000000) throw new Error("O arquivo precisa ter menos de 2 MB.");
+  return { canceled: false, supported: true, name, content: await fs.readFile(filePath, "utf8") };
+});
 ipcMain.handle("sats:save-text", async (_event, { suggestedName, content }) => {
   if (typeof content !== "string" || content.length > 2_000_000) {
     throw new Error("Conteúdo inválido ou maior que 2 MB.");
