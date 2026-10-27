@@ -206,3 +206,17 @@ body{background:#050505;color:#f7f7f7}
 .sf-overlay{position:absolute;z-index:4;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;background:#080b1dcc;backdrop-filter:blur(5px)}.sf-overlay.hidden{display:none}.sf-overlay h3{font-size:29px;letter-spacing:5px;margin:0 0 8px}.sf-overlay p{color:#ddd;max-width:340px}.sf-controls{display:flex;justify-content:center;gap:10px;margin-top:10px}.sf-controls button{min-width:64px}
 .sats-browser .browser-form{margin-top:0}.browser-shortcuts{display:flex;gap:8px;margin-bottom:8px}.browser-shortcuts .file-tile{padding:8px 12px;font-size:11px}
 @media(max-width:600px){.sf-arena{height:260px}.starfall-hud{padding:9px}.starfall-hud b{font-size:14px}.sf-overlay h3{font-size:24px}}
+
+
+/* Apps abertas ocupam a área útil; o SATS Browser fica sem moldura preta */
+.window.maximized{left:0;top:0;right:0;bottom:0;width:auto;height:auto;transform:none;border-radius:14px}
+.window[data-app="browser"]{left:0!important;top:0!important;right:0!important;bottom:0!important;width:auto!important;height:auto!important;transform:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:#fff!important;backdrop-filter:none!important}
+.window[data-app="browser"] .window-title{flex:0 0 44px;border-radius:0;background:#171a2b;color:#fff}
+.window[data-app="browser"] .window-body{padding:0!important;overflow:hidden!important;background:#fff;color:#111;display:flex;flex-direction:column;min-height:0}
+.window[data-app="browser"] .sats-browser{height:100%;min-height:0;display:flex;flex-direction:column;background:#fff}
+.window[data-app="browser"] .browser-form{flex:0 0 auto;margin:0;padding:8px;background:#171a2b}
+.window[data-app="browser"] .browser-shortcuts{display:flex;gap:8px;padding:8px;background:#f2f3f8}
+.window[data-app="browser"] .browser-shortcuts .file-tile{padding:8px 12px;background:#fff;color:#222;border:1px solid #ddd}
+.window[data-app="browser"] #browserFrameNote{display:none}
+.window[data-app="browser"] #browserFrame,.window[data-app="browser"] #browserFallback{display:block;flex:1;width:100%!important;height:auto!important;min-height:0!important;border:0!important;border-radius:0!important;background:#fff}
+@media(max-width:600px){.window.maximized{border-radius:12px}.window[data-app="browser"]{border-radius:0!important}.window[data-app="browser"] .window-title{height:42px;flex-basis:42px}}
