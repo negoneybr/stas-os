@@ -7,5 +7,6 @@ contextBridge.exposeInMainWorld("satsDesktop", {
   platform: process.platform,
   pickFiles: () => ipcRenderer.invoke("sats:pick-files"),
   openHomeFolder: () => ipcRenderer.invoke("sats:open-home-folder"),
-  saveTextFile: (suggestedName, content) => ipcRenderer.invoke("sats:save-text", { suggestedName, content })
+  saveTextFile: (suggestedName, content) => ipcRenderer.invoke("sats:save-text", { suggestedName, content }),
+  launchBrowser: () => ipcRenderer.invoke("sats:launch-browser")
 });
