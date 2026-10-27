@@ -1,0 +1,32 @@
+# Pacotes base para uma ISO Debian Live de teste do SATS OS.
+# A sessão Electron do SATS será integrada em uma etapa posterior.
+task-xfce-desktop
+lightdm
+network-manager
+network-manager-gnome
+sudo
+dbus-x11
+xorg
+xserver-xorg-video-all
+xserver-xorg-input-all
+firmware-linux
+firmware-linux-free
+firmware-misc-nonfree
+alsa-utils
+pipewire
+wireplumber
+pulseaudio-utils
+firefox-esr
+chromium
+nodejs
+npm
+git
+curl
+wget
+ca-certificates
+fonts-inter
+fonts-noto
+fonts-noto-color-emoji
+policykit-1
+udisks2
+gvfs
